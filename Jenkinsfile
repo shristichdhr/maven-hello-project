@@ -1,5 +1,5 @@
 pipeline {
-	agent('any')
+	agent { 'any' }
 
 
 	stages {
@@ -7,13 +7,8 @@ pipeline {
     		{
         		def dockerHome = tool 'DOCKER_HOME'
         		def mavenHome  = tool 'M2_HOME'
-        		env.PATH = "${dockerHome}:${mavenHome}/bin:${env.PATH}"
+        		env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
     		}
-   		stage {
-		    agent {
-			docker 'maven:3.5-alphine'
-		    }
-		}
 		stage ('Checkout') {
 			steps {
 				git 'https://github.com/tektutor/maven-hello-project.git'
