@@ -1,5 +1,5 @@
 pipeline {
-	agent { docker { image 'maven:3.5-alphine' } }
+	agent { docker { image 'maven:3-alphine' } }
 
 	environment {
         	DOCKER_PATH = '/bin'
