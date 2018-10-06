@@ -1,10 +1,10 @@
 pipeline {
-	agent { docker { image 'maven:3.5-alphine' } }
+	agent { ${DOCKER_PATH}/docker { image 'maven:3.5-alphine' } }
 
 	environment {
         	DOCKER_PATH = '/bin'
 		M2_HOME = '/usr/share/maven'
-		PATH = "${PATH}:${DOCKER_PATH}:${M2_HOME}/bin "
+		PATH = "${PATH}:${DOCKER_PATH}:${M2_HOME}/bin"
     	}
 
 	stages {
