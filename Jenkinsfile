@@ -1,6 +1,5 @@
 pipeline {
-	agent { 'any' }
-
+	agent 'none'
 
 	stages {
     		stage('Initialize')
@@ -10,11 +9,17 @@ pipeline {
         		env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
     		}
 		stage ('Checkout') {
+ 			agent {
+				docker { image 'maven:3.5-alpine' }
+			}
 			steps {
 				git 'https://github.com/tektutor/maven-hello-project.git'
 			}
 		}
 		stage ('Build') {
+ 			agent {
+				docker { image 'maven:3.5-alpine' }
+			}
 			steps {
 				sh 'mvn clean package'
 				junit '**/target/surefire-reports/TEST-*.xml'
