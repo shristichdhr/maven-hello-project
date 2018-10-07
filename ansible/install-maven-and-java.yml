@@ -6,3 +6,6 @@
 
     - name: Install maven
       apt: name=maven state=latest update_cache=yes
+
+    - name: Install git 
+      apt: name=git state=latest update_cache=yes
