@@ -1,0 +1,8 @@
+- name: This playbook will install java and maven 
+  hosts: all
+  tasks:
+    - name: Install JDK 
+      apt: name=default-jdk state=latest update_cache=yes
+
+    - name: Install maven
+      apt: name=maven state=latest update_cache=yes
