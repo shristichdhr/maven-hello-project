@@ -5,7 +5,10 @@
 	<artifactId>tektutor-hello-world</artifactId>
 	<version>1.0.0</version>
 
-	//Fixed high priority issue
+	<!--Fixed high priority issue -->
+	<properties>
+		<java.compiler.source>1.8</java.compiler.source>
+	</properties>
 
 	<dependencies>
 		<dependency>

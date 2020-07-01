@@ -6,6 +6,10 @@ public class App {
 		return "Hello Maven!";
 	}
 
+	public String someLowPriorityNewFeature() {
+		System.out.println ( "Work in Progress ..." );
+	}
+
 	public static void main ( String args[] ) {		
 		App obj = new App();
 		System.out.println ( obj.sayHello() );
