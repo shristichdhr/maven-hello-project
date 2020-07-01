@@ -7,6 +7,7 @@
 
 	<properties>
 		<java.compiler.source>1.8</java.compiler.source>
+		<java.compiler.target>1.8</java.compiler.target>
 	</properties>
 
 	<dependencies>
